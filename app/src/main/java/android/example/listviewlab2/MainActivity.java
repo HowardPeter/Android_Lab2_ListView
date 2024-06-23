@@ -28,14 +28,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addControl();
+        lvDishes = (ListView) findViewById(R.id.lvDishes);
         importData();
         addEvent();
-    }
-
-    void addControl()
-    {
-        lvDishes = (ListView) findViewById(R.id.lvDishes);
     }
 
     void createData(int[] image, String[] name, String[] category, String[] ingredients, Character[] size, int[] price) {
