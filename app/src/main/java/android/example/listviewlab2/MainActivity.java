@@ -16,12 +16,12 @@ public class MainActivity extends AppCompatActivity {
     CustomAdapterDish customAdapterDish;
     ArrayList<Dish> dataLV = new ArrayList<>();
 
-    int[] dsImage = new int[]{R.drawable.banh_mi, R.drawable.bun_bo, R.drawable.pho_bo};
-    String[] dsName = new String[]{"Bánh mì", "Bún bò Huế", "Phở"};
-    String[] dsCategory = new String[]{"Sandwich", "Noodle", "Noodle"};
-    String[] dsIngredients = new String[]{"Bánh mì, pate, thịt heo, rau sống", "Bún, thịt bò, rau trụng", "Bánh phở, thịt bò, bò viên, rau sống"};
-    Character[] dsSize = new Character[]{'S', 'M', 'L'};
-    int[] dsPrice = new int[]{25, 40, 40};
+    int[] dsImage = new int[]{R.drawable.banh_mi, R.drawable.bun_bo, R.drawable.pho_bo, R.drawable.bun_bo};
+    String[] dsName = new String[]{"Bánh mì", "Bún bò Huế", "Phở", "Bún bò"};
+    String[] dsCategory = new String[]{"Sandwich", "Noodle", "Noodle", "Rice noodle"};
+    String[] dsIngredients = new String[]{"Bánh mì, pate, thịt heo, rau sống", "Bún, thịt bò, rau trụng", "Bánh phở, thịt bò, bò viên, rau sống", "It's bún bò"};
+    Character[] dsSize = new Character[]{'S', 'M', 'L', 'L'};
+    int[] dsPrice = new int[]{25, 40, 40, 60};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         importData();
         addEvent();
     }
-
     void createData(int[] image, String[] name, String[] category, String[] ingredients, Character[] size, int[] price) {
         for (int i = 0; i < image.length; i++) {
             Dish ds = new Dish();
@@ -45,13 +44,11 @@ public class MainActivity extends AppCompatActivity {
             dataLV.add(ds);
         }
     }
-
     void importData() {
         createData(dsImage, dsName, dsCategory, dsIngredients, dsSize, dsPrice);
         customAdapterDish = new CustomAdapterDish(MainActivity.this, R.layout.layout_custom_item, dataLV);
         lvDishes.setAdapter(customAdapterDish);
     }
-
     void addEvent()
     {
         lvDishes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
